@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Template">
+    <meta name="keywords" content="admin dashboard, admin, flat, flat ui, ui kit, app, web app, responsive">
+    <link rel="shortcut icon" href="static/img/ico/favicon.png">
+    <title>Xuan Dieu - Registration</title>
+
+    <!-- Base Styles -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/style-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="login-body">
+
+      <div class="login-logo">
+          <img src="static/img/login_logo.png" alt=""/>
+      </div>
+
+      <h2 class="form-heading">registration now</h2>
+      <div class="container log-row">
+          <form class="form-signin" method="POST" action="/signup">
+              <p>Enter your personal details below</p>
+              {{ form.hidden_tag() }}
+              {{ form.first_name(class="form-control", placeholder="First Name", autofocus=true) }}
+              {% if form.first_name.errors %}
+                {%for error in form.first_name.errors %}
+                  <label id="cname-error" class="error" for="cname">{{ error }}</label>
+                {%endfor%}
+              {% endif %}
+              {{ form.last_name(class="form-control", placeholder="Last Name", autofocus=true) }}
+              {% if form.last_name.errors %}
+                {%for error in form.last_name.errors %}
+                  <label id="cname-error" class="error" for="cname">{{ error }}</label>
+                {%endfor%}
+              {% endif %}
+              {{ form.email(class="form-control", placeholder="Email", autofocus=true) }}
+              {% if form.email.errors %}
+                {%for error in form.email.errors %}
+                  <label id="cname-error" class="error" for="cname">{{ error }}</label>
+                {%endfor%}
+              {% endif %}
+              {{ form.password(class="form-control", placeholder="Password", autofocus=true) }}
+              {% if form.password.errors %}
+                {%for error in form.password.errors %}
+                  <label id="cname-error" class="error" for="cname">{{ error }}</label>
+                {%endfor%}
+              {% endif %}
+              {{ form.submit(class="btn btn-lg btn-success btn-block") }}
+              
+             
+              <div class="registration m-t-20 m-b-20">
+                  Already Registered.
+                  <a class="" href="login.html">
+                      Login
+                  </a>
+              </div>
+          </form>
+      </div>
+
+    <!--jquery-1.10.2.min-->
+    <script src="static/js/jquery-1.11.1.min.js"></script>
+    <!--Bootstrap Js-->
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jrespond..min.js"></script>
+
+
+
+  </body>
+</html>
